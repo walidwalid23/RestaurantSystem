@@ -1,10 +1,6 @@
  
 package restsystem;
 import java.awt.Color;
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
-import java.util.ArrayList;
-import java.util.Scanner;
 import javax.swing.*;
 import java.awt.event.*;
 
