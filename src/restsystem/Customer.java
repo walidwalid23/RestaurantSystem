@@ -3,7 +3,6 @@ package restsystem;
 import java.awt.Color;
 import java.io.*;
 import java.io.ObjectInputStream;
-import java.util.Scanner;
 import javax.swing.*;
 import java.awt.event.*;
 
@@ -160,7 +159,7 @@ read.close();
 void ShowCustomerSystem(){
     try{
     JOptionPane.showMessageDialog(null,"WELCOME TO CUSTOMER SYSTEM");
-   JFrame frame=new JFrame("Costumer System");
+   JFrame frame=new JFrame("Customer System");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setLayout(null);
             frame.setSize(400, 500);

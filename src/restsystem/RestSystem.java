@@ -1,10 +1,5 @@
- 
 package restsystem;
 import java.awt.Color;
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
-import java.util.ArrayList;
-import java.util.Scanner;
 import javax.swing.*;
 import java.awt.event.*;
 
@@ -16,7 +11,6 @@ public class RestSystem {
     Owner owner=new Owner();
     Customer customer=new Customer();
     
-     JOptionPane.showMessageDialog(null,"WELCOME TO OUR SYSTEM!");
      JPanel objj=new JPanel();
     
    JFrame frame=new JFrame("The Restaurant");
@@ -54,7 +48,7 @@ public class RestSystem {
      
    
    class listener implements ActionListener{
-       
+      @Override 
    public void actionPerformed(ActionEvent action){
        
  
