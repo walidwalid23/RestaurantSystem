@@ -34,6 +34,7 @@ public class Owner {
   
   
   }
+  filein.close();
    read.close();
 
     }
@@ -50,6 +51,7 @@ public class Owner {
   waiters.add(mywaiter);
   
   }
+  filein.close();
   read.close();
 
   }
@@ -77,10 +79,13 @@ public class Owner {
 
   //START OF THE FUNCTION  
     String name=JOptionPane.showInputDialog("Type the name of the restaurant branch:");
+    for(int i=0;i<restaurants.size();i++){
+    if(restaurants.get(i).branchname.equals(name)){
+    throw new Exception("Restaurant Already Exists");}
+    }
      int itemsnumber=Integer.parseInt(JOptionPane.showInputDialog("Type the number of the items to add:"));
      String[] items=new String[itemsnumber];
      
-    
      for(int i=0;i<itemsnumber;i++){
        
      String item=JOptionPane.showInputDialog("Enter the name of the Item:");
@@ -185,6 +190,7 @@ butt.addActionListener(new listener());
     catch(Exception err){
     
   JOptionPane.showMessageDialog(null,"ERROR: "+err,"message",JOptionPane.WARNING_MESSAGE);
+  
     }
     }
         
@@ -588,7 +594,7 @@ JOptionPane.showMessageDialog(null,"ERROR"+err,"message",JOptionPane.ERROR_MESSA
    
    
    class listener implements ActionListener{
-       
+       @Override
    public void actionPerformed(ActionEvent action){
        
        if(action.getSource()==button){
@@ -645,7 +651,7 @@ JOptionPane.showMessageDialog(null,"ERROR"+err,"message",JOptionPane.ERROR_MESSA
           
         
              catch(java.util.InputMismatchException err){
-        System.out.println();
+     
         JOptionPane.showMessageDialog(null,"TRY AGAIN,PLEASE ENTER A NUMBER FROM THE LIST","message",JOptionPane.ERROR_MESSAGE);
         }
     

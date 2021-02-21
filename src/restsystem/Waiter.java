@@ -43,7 +43,7 @@ try{
   orders.add(myorder);
   
   }
-  
+  filein.close();
   read.close();
 
   }
@@ -63,6 +63,7 @@ try{
   
   
   }
+    filein.close();
    read.close();
 
   }
@@ -89,7 +90,7 @@ void takeorder(Order order){
 int randprice=(int)(Math.random()*191)+10;
 
 int payment=Integer.parseInt(JOptionPane.showInputDialog("Alright Sir, The tottal price is:"+randprice+" LE:"));
-while(payment<randprice || payment>randprice){
+while(payment!=randprice){
 //FIRST CONDITION
 if(payment<randprice){
 
@@ -100,19 +101,8 @@ payment+=Integer.parseInt(JOptionPane.showInputDialog(randprice-payment+" LE lef
 //SECOND CONDITION
 if(payment>randprice){
 JOptionPane.showMessageDialog(null,"Take "+(payment-randprice)+" Sir ");
-order.price=randprice;
-orders.add(order);
-//ADD ORDER TO FILE
-File file=new File("Orders.bin");
-file.delete();
- FileOutputStream fileout=new FileOutputStream("Orders.bin",true);
-    ObjectOutputStream write=new ObjectOutputStream(fileout);
-    for(int i=0;i<orders.size();i++){
+payment=randprice;
 
-        write.writeObject(orders.get(i));
-    }
-      
-    write.close();
 }
 
 }
@@ -300,6 +290,7 @@ if(ordername.equals(orders.get(i).itemname)){
 isfound=true;
 //REMOVE THE WANTED ORDER
 orders.remove(i);}
+
 }
 if(isfound==false){
 throw new Exception("ITEM NOT FOUND");
