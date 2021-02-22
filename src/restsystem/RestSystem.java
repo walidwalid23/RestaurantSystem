@@ -10,9 +10,7 @@ public class RestSystem {
        
     Owner owner=new Owner();
     Customer customer=new Customer();
-    
-     JPanel objj=new JPanel();
-    
+
    JFrame frame=new JFrame("The Restaurant");
 
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
